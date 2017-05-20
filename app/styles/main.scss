@@ -51,7 +51,7 @@ p {
   &._preview {
     height: 80vh;
     padding-top: 100px;
-    background: url('/images/icon-seamless.png');
+    background: url('../images/icon-seamless.png');
     position: relative;
 
     &:before {
@@ -69,7 +69,7 @@ p {
 .account__paralax {
   width: 100%;
   height: 100%;
-  background: url('/images/icon-seamless.png');
+  background: url('../images/icon-seamless.png');
 }
 
 .parallax-container .section {
@@ -166,7 +166,7 @@ footer.page-footer {
   text-align: center;
 
   &._first {
-    background: url("/images/logo.svg") no-repeat center center;
+    background: url("../images/logo.svg") no-repeat center center;
     background-size: contain;
     background-position: center center;
     width: 60px;
