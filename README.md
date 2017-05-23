@@ -10,11 +10,9 @@ Getting started
   
  Run dev version
  
- gulp serve // localhost:90000
+    gulp serve // localhost:90000
  
  Run build version (production)
  
- gulp build // compiled in folder /dist
- 
- watch uild version
- gulp serve:build
+    gulp build // compiled in folder /dist
+    gulp serve:dist // watch build version localhost:90000
