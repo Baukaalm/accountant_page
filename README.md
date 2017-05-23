@@ -15,4 +15,4 @@ Getting started
  Run build version (production)
  
     gulp build // compiled in folder /dist
-    gulp serve:dist // watch build version localhost:90000
+    gulp serve:dist // watch build version localhost:9000
