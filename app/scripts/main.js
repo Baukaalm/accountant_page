@@ -1,6 +1,5 @@
 $(document).ready(function() {
   $('.parallax').parallax();
-  $('select').material_select();
 });
 
 
@@ -11,7 +10,7 @@ const elements = {
 };
 const checkboxes = {
   param_too: $('#too'),
-  param_ip:  $('#ip'),
+  param_ip: $('#ip'),
   param_usn: $('#usn'),
   param_nds: $('#nds')
 }
@@ -21,10 +20,6 @@ const values = {
   participantsValue: 2,
   price: null
 }
-
-
-
-
 
 // docoments slider
 const sliderDocs = document.querySelector('.js-slider-documents');
@@ -60,25 +55,34 @@ noUiSlider.create(sliderParticipants, {
   format: formatParticipants
 });
 
+const checkValues = function(name, value) {
+  switch (name) {
+    case 'documents':
+      if (value === 300) {
+        elements.documents.text(value + ' и выше');
+      }
+      break;
+    case 'participants':
+      if (value === 20) {
+        elements.participants.text(value + ' и выше');
+      }
+      break;
+  }
+
+}
 
 sliderDocs.noUiSlider.on('update', function(values, handle) {
   let value = parseInt(values[handle]);
   values.documentsValue = value;
-  console.log(values.price);
-  console.log(values.documentsValue);
   elements.documents.text(values);
-  if (value === 300) {
-    elements.documents.text(values.documentsValue + ' и выше');
-  }
+  checkValues('documents',values.documentsValue);
 });
 
 sliderParticipants.noUiSlider.on('update', function(values, handle) {
   let value = parseInt(values[handle]);
   values.participantsValue = value;
-  console.log(values.participantsValue);
   elements.participants.text(values);
-  if (value === 20) {
-    elements.participants.text(values.participantsValue + ' и выше');
-  }
+  checkValues('participants',values.participantsValue);
+
 
 });
