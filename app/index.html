@@ -15,6 +15,7 @@
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="/bower_components/materialize/bin/materialize.css" />
+  <link rel="stylesheet" href="/bower_components/nouislider/distribute/nouislider.min.css" />
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -76,7 +77,7 @@
   </div>
 
   <div class="parallax-container _second valign-wrapper">
-    <div class="parallax"><img class="accountant__bgfirst" src="images/pt-bg.svg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img class="accountant__bgfirst" src="/images/pt-bg.svg" alt="Unsplashed background img 2"></div>
   </div>
   <div class="container accountant__wrapper _fluid">
     <div class="section">
@@ -115,9 +116,8 @@
         <div class="col s12 center">
           <h3><i class="mdi-content-send "></i></h3>
           <h4 class="accountant__title">Современный аутсорсинг</h4>
-          <p class="center-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non  magna  ac. Cras ut  eros.  eros justo, ullamcorper a sapien id, viverra
-            ultrices eros. Morbi sem neque, dum sollicitudin lacus.  diam, eu mattis nisl maximus sed. , gravida ultrices
-            erat. Nullam eget dignissim mauris, non tristique erat. cibus orci luctus et ultrices posuere cubilia Curae;</p>
+          <p class="center-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non magna ac. Cras ut eros. eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, dum
+            sollicitudin lacus. diam, eu mattis nisl maximus sed. , gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. cibus orci luctus et ultrices posuere cubilia Curae;</p>
         </div>
       </div>
 
@@ -129,8 +129,8 @@
       <!--   Icon Section   -->
       <div class="row">
         <div class="col s12 center">
-        <h4 class="accountant__title">Наши преимущества</h4>
-      </div>
+          <h4 class="accountant__title">Наши преимущества</h4>
+        </div>
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center  accountant__icontext"><i class="large material-icons">flash_on</i></h2>
@@ -164,28 +164,44 @@
 
 
 
-
-
-
-
   <div class="container">
     <div class="section">
-
+      <div class="col s12 center">
+        <h4 class="accountant__title">Сколько стоит</h4>
+      </div>
       <div class="row">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <div class="col s12 center">
-          <h4 class="accountant__title">Сколько стоит</h4>
-        </div>          <form action="#">
-            <p class="range-field">
-              <input type="range" id="test5" min="0" max="100" />
-            </p>
-            <p class="range-field">
-              <input type="range" id="test5" min="0" max="100" />
-            </p>
-          </form>
-
-        </div>
-
+        <form action="#" class="checkboxes">
+          <p class="checkbox">
+            <input type="checkbox" id="test5" />
+            <label for="test5">ТОО</label>
+          </p>
+          <p class="checkbox">
+            <input type="checkbox"  id="test6" />
+            <label for="test6">ИП</label>
+          </p>
+          <p class="checkbox">
+            <input type="checkbox" id="test7" />
+            <label for="test7">УСН</label>
+          </p>
+          <p class="checkbox">
+            <input type="checkbox" id="test8" />
+            <label for="test8">НДС</label>
+          </p>
+        </form>
+      </div>
+      <div class="row">
+        <h4>Кол-во документов в месяц: <span class="js-documents"></span></h4>
+        <div class="js-slider-documents"> </div>
+      </div>
+      <br>
+      <div class="row">
+        <h4>Кол-во сотрудников: <span class="js-participants"></span></h4>
+        <div class="js-slider-participants"> </div>
+      </div>
+      <br>
+      <div class="row">
+        <h4 class="col s12 center">Итого: <span class="js-pirce">  </span></h4>
+      </div>
     </div>
   </div>
 
@@ -247,7 +263,9 @@
   <!-- bower:js -->
   <script src="/bower_components/jquery/dist/jquery.js"></script>
   <script src="/bower_components/materialize/bin/materialize.js"></script>
+  <script src="/bower_components/nouislider/distribute/nouislider.js"></script>
   <!-- endbower -->
+  <script src="/bower_components/wnumb/wNumb.js"></script>
   <!-- endbuild -->
 
   <!-- build:js scripts/main.js -->
