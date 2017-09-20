@@ -8,6 +8,8 @@ const elements = {
   participants: $('.js-participants'),
   price: $('.js-pirce')
 };
+
+
 const checkboxes = {
   param_too: $('#too'),
   param_ip: $('#ip'),
@@ -20,6 +22,14 @@ const values = {
   participantsValue: 2,
   price: null
 }
+
+let DEFAULT_SUM = 25000;
+
+let BASE_DOC_AMOUNT = 5000;
+
+_updateDefaultSum();
+
+
 
 // docoments slider
 const sliderDocs = document.querySelector('.js-slider-documents');
@@ -55,7 +65,32 @@ noUiSlider.create(sliderParticipants, {
   format: formatParticipants
 });
 
-const checkValues = function(name, value) {
+
+sliderDocs.noUiSlider.on('update', function(values, handle) {
+  let value = Number(values[handle]);
+  const sum = (2 * value) / 10 * 1000;
+  _updateDefaultSum(sum);
+  values.documentsValue = value;
+  elements.documents.text(values);
+  _checkValuesTypo('documents', values.documentsValue);
+});
+
+sliderParticipants.noUiSlider.on('update', function(values, handle) {
+  let value = Number(values[handle]);
+  values.participantsValue = value;
+
+  elements.participants.text(values);
+  _checkValuesTypo('participants', values.participantsValue);
+});
+
+function _updateDefaultSum(value) {
+  if (value) {
+    return elements.price.text(DEFAULT_SUM + value);
+  }
+  return elements.price.text(DEFAULT_SUM);
+}
+
+function _checkValuesTypo(name, value) {
   switch (name) {
     case 'documents':
       if (value === 300) {
@@ -69,20 +104,14 @@ const checkValues = function(name, value) {
       break;
   }
 
+  function _calculate(sum, condition) {
+    switch (condition) {
+      case 'participants':
+        return sum + DEFAULT_SUM
+      default:
+
+    }
+    console.log(sum);
+  }
+
 }
-
-sliderDocs.noUiSlider.on('update', function(values, handle) {
-  let value = parseInt(values[handle]);
-  values.documentsValue = value;
-  elements.documents.text(values);
-  checkValues('documents',values.documentsValue);
-});
-
-sliderParticipants.noUiSlider.on('update', function(values, handle) {
-  let value = parseInt(values[handle]);
-  values.participantsValue = value;
-  elements.participants.text(values);
-  checkValues('participants',values.participantsValue);
-
-
-});
